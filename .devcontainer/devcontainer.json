@@ -31,5 +31,11 @@
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
 		"ms-python.python"
-	]
+	],
+
+	// following lines taken from this link:
+	// https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container
+	"runArgs": [ "-v", "${env:HOME}${env:USERPROFILE}/.ssh:/root/.ssh-localhost:ro" ],
+	"postCreateCommand": "mkdir -p /root/.ssh && cp -r /root/.ssh-localhost/* /root/.ssh && chmod 700 /root/.ssh && chmod 600 /root/.ssh/*"
+
 }
