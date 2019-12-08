@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Travis Thomas",
     author_email="travis.s.thomas@gmail.com",
-    description="An adapter to interface with various storage back-ends",
+    description="An adapter to interface with various storage backends",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/travisthomas/StorageAdapter",
