@@ -3,8 +3,14 @@
 build:
 	python3 setup.py bdist_wheel
 
-clean: clean
+install:
+	python3 setup.py install
+
+test: install
+	python3 -m pytest test/
+
+clean:
 	-rm -rf build dist *.egg-info
 	# -rm -f $(DESTDIR)$(prefix)/bin/hello
 
-.PHONY: build clean
+.PHONY: build install test clean

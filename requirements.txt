@@ -4,3 +4,4 @@ black==19.10b
 setuptools==39.0
 wheel==0.30
 boto3==1.10
+pytest==5.3
