@@ -26,7 +26,7 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     #
     # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed
-    && apt-get -y install git iproute2 procps lsb-release \
+    && apt-get -y install git iproute2 procps lsb-release zip \
     #
     # Install pylint
     && pip --disable-pip-version-check --no-cache-dir install pylint \
@@ -52,5 +52,9 @@ RUN apt-get update \
 ENV DEBIAN_FRONTEND=
 
 COPY requirements.txt requirements.txt
+
+RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install
 
 RUN pip install -r requirements.txt

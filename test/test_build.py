@@ -16,3 +16,14 @@ def test_build_upgrader_put():
 def test_build_upgrader_get():
     build = builds.Upgrader("0.0.1", "data/garbage.one")
     build.get()
+
+
+def test_build_upgrader_put_repeatedly():
+    """
+    This test should give insight into how repeated puts behave
+    """
+    build = builds.Upgrader("0.0.1", "data/garbage.one")
+    build.put()
+    # what is the output of .put()?
+    build.put()
+    build.put()
